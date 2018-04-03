@@ -6,4 +6,5 @@ This appliance contains server side software for secondary management of network
 - tftp (tftpd)
 - syslog (rsyslog)
 - dhcp (isc-dhcpd)
+- snmp server (snmpd + snmptrapd)
 
