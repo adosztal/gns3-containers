@@ -8,7 +8,8 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get update && apt-get -y --no-install-rec
     && rm -rf /var/lib/apt/lists/*
 
 ADD https://raw.githubusercontent.com/adosztal/gns3-containers/master/webserver/vsftpd.conf /etc/vsftpd.conf
+ADD https://raw.githubusercontent.com/adosztal/gns3-containers/master/webserver/pam_d-vsftpd /etc/pam.d/vsftpd
 
 VOLUME [ "/root" ]
-CMD [ "sh", "-c", "/etc/init.d/nginx start; /etc/init.d/vsftpd start; cd; exec bash -i" ]
+CMD [ "sh", "-c", "echo root:gns3 | chpasswd; /etc/init.d/nginx start; /etc/init.d/vsftpd start; cd; exec bash -i" ]
 
