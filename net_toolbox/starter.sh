@@ -14,7 +14,7 @@ SNMPD_PID=`cat /run/snmpd.pid`
 /etc/init.d/snmpd stop >/dev/null 2>/dev/null
 kill $SNMPD_PID
 /etc/init.d/snmpd start >/dev/null 2>/dev/null
-/etc/init.d/snmptrapd start
+/etc/init.d/snmptrapd start >/dev/null 2>/dev/null
 
 clear
 
