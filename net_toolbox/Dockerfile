@@ -18,7 +18,7 @@ ADD https://raw.githubusercontent.com/adosztal/gns3-containers/master/net_toolbo
 ADD https://raw.githubusercontent.com/adosztal/gns3-containers/master/net_toolbox/index.html /var/www/html/index.html
 ADD https://raw.githubusercontent.com/adosztal/gns3-containers/master/net_toolbox/gns3.png /var/www/html/gns3.png
 
-RUN DEBIAN_FRONTEND=noninteractive chmod 755 /sbin/starter.sh; mkdir /tftpboot; chmod 777 /tftpboot; echo root:gns3 | chpasswd
+RUN DEBIAN_FRONTEND=noninteractive chmod 755 /sbin/starter.sh; mkdir /tftpboot; chmod 777 /tftpboot; echo root:gns3 | chpasswd; chmod 644 /var/www/html/*
 
 VOLUME [ "/root", "/tftpboot", "/var/log", "/var/www", "/etc" ]
 CMD [ "sh", "-c", "/sbin/starter.sh" ]
