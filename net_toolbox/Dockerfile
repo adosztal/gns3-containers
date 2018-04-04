@@ -15,6 +15,8 @@ ADD https://raw.githubusercontent.com/adosztal/gns3-containers/master/net_toolbo
 ADD https://raw.githubusercontent.com/adosztal/gns3-containers/master/net_toolbox/default_snmptrapd /etc/default/snmptrapd
 ADD https://raw.githubusercontent.com/adosztal/gns3-containers/master/net_toolbox/snmpd.conf /etc/snmp/snmpd.conf
 ADD https://raw.githubusercontent.com/adosztal/gns3-containers/master/net_toolbox/snmptrapd.conf /etc/snmp/snmptrapd.conf
+ADD https://raw.githubusercontent.com/adosztal/gns3-containers/master/net_toolbox/index.html /var/www/html/index.html
+ADD https://raw.githubusercontent.com/adosztal/gns3-containers/master/net_toolbox/gns3.png /var/www/html/gns3.png
 
 RUN DEBIAN_FRONTEND=noninteractive chmod 755 /sbin/starter.sh; mkdir /tftpboot; chmod 777 /tftpboot; echo root:gns3 | chpasswd
 
