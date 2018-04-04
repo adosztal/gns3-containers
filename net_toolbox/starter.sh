@@ -1,9 +1,3 @@
-# Adding root password
-echo root:gns3 | chpasswd
-
-# Adding write permission to /tftpboot
-chmod 777 /tftpboot/
-
 # (Re)starting services
 # snmpd hangs after stop, it needs to be killed manually
 /etc/init.d/rsyslog start >/dev/null 2>/dev/null

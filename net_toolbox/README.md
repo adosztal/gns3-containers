@@ -1,4 +1,4 @@
-# Ubuntu - Networkers' Toolbox
+# Networkers' Toolbox
 
 This appliance contains server side software for secondary management of network devices:
 - www (nginx)

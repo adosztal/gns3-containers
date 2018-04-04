@@ -16,7 +16,7 @@ ADD https://raw.githubusercontent.com/adosztal/gns3-containers/master/net_toolbo
 ADD https://raw.githubusercontent.com/adosztal/gns3-containers/master/net_toolbox/snmpd.conf /etc/snmp/snmpd.conf
 ADD https://raw.githubusercontent.com/adosztal/gns3-containers/master/net_toolbox/snmptrapd.conf /etc/snmp/snmptrapd.conf
 
-RUN DEBIAN_FRONTEND=noninteractive chmod 755 /sbin/starter.sh
+RUN DEBIAN_FRONTEND=noninteractive chmod 755 /sbin/starter.sh; mkdir /tftpboot; chmod 777 /tftpboot; echo root:gns3 | chpasswd
 
 VOLUME [ "/root", "/tftpboot", "/var/log", "/var/www", "/etc" ]
 CMD [ "sh", "-c", "/sbin/starter.sh" ]
