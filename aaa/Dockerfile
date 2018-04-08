@@ -16,7 +16,7 @@ ADD https://raw.githubusercontent.com/adosztal/gns3-containers/master/aaa/tac_pl
 ADD https://raw.githubusercontent.com/adosztal/gns3-containers/master/aaa/starter.sh /sbin/starter.sh
 
 
-RUN DEBIAN_FRONTEND=noninteractive touch /var/log/tac_plus.acct; chmod 755 /sbin/starter.sh; chmod 644 
+RUN DEBIAN_FRONTEND=noninteractive touch /var/log/tac_plus.acct; chmod 755 /sbin/starter.sh
 
 VOLUME [ "/root", "/etc/freeradius", "/etc/tacacs+" ]
 CMD [ "sh", "-c", "/sbin/starter.sh" ]
