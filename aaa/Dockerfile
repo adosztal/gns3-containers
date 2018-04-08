@@ -4,7 +4,7 @@ FROM ubuntu:xenial
 
 RUN DEBIAN_FRONTEND=noninteractive apt-get update && apt-get -y --no-install-recommends \
     install telnet curl openssh-client nano vim-tiny iputils-ping build-essential \
-    net-tools freeradius tacacs+ \
+    net-tools freeradius freeradius-utils tacacs+ \
     && rm -rf /var/lib/apt/lists/*
 
 ADD https://raw.githubusercontent.com/adosztal/gns3-containers/master/aaa/radiusd.conf /etc/freeradius/radiusd.conf
@@ -17,7 +17,7 @@ ADD https://raw.githubusercontent.com/adosztal/gns3-containers/master/aaa/runonc
 ADD https://raw.githubusercontent.com/adosztal/gns3-containers/master/aaa/starter.sh /sbin/starter.sh
 
 
-RUN DEBIAN_FRONTEND=noninteractive chmod 755 /sbin/runonce.sh; /sbin/runonce.sh
+RUN DEBIAN_FRONTEND=noninteractive chmod 755 /sbin/runonce.sh; sleep 1; /sbin/runonce.sh
 
 VOLUME [ "/root", "/etc/freeradius", "/etc/tacacs+" ]
 CMD [ "sh", "-c", "/sbin/starter.sh" ]
