@@ -13,10 +13,11 @@ ADD https://raw.githubusercontent.com/adosztal/gns3-containers/master/aaa/eap.co
 ADD https://raw.githubusercontent.com/adosztal/gns3-containers/master/aaa/mschap /etc/freeradius/modules/mschap
 ADD https://raw.githubusercontent.com/adosztal/gns3-containers/master/aaa/users /etc/freeradius/users
 ADD https://raw.githubusercontent.com/adosztal/gns3-containers/master/aaa/tac_plus.conf /etc/tacacs+/tac_plus.conf
+ADD https://raw.githubusercontent.com/adosztal/gns3-containers/master/aaa/runonce.sh /sbin/runonce.sh
 ADD https://raw.githubusercontent.com/adosztal/gns3-containers/master/aaa/starter.sh /sbin/starter.sh
 
 
-RUN DEBIAN_FRONTEND=noninteractive touch /var/log/tac_plus.acct; chmod 755 /sbin/starter.sh
+RUN DEBIAN_FRONTEND=noninteractive chmod 755 /sbin/runonce.sh; /sbin/runonce.sh
 
 VOLUME [ "/root", "/etc/freeradius", "/etc/tacacs+" ]
 CMD [ "sh", "-c", "/sbin/starter.sh" ]
