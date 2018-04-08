@@ -8,6 +8,7 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get update && apt-get -y --no-install-rec
     && rm -rf /var/lib/apt/lists/*
 
 #ADD https://raw.githubusercontent.com/adosztal/gns3-containers/master/net_toolbox/radiusd.conf /etc/freeradius/radiusd.conf
+ADD https://raw.githubusercontent.com/adosztal/gns3-containers/master/aaa/starter.sh /sbin/starter.sh
 
 RUN DEBIAN_FRONTEND=noninteractive chmod 755 /sbin/starter.sh
 
