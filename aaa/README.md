@@ -10,5 +10,5 @@ TACACS+ users:
 - gns3
 - readonly
 
-All users, as well as the RADIUS/TACACS+ clients has the password "gns3" set.
+All users, as well as the RADIUS/TACACS+ clients have the password "gns3" set.
 

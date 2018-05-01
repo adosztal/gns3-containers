@@ -1,6 +1,6 @@
 # Networkers' Toolbox
 
-FROM ubuntu:xenial
+FROM ubuntu:bionic
 
 RUN DEBIAN_FRONTEND=noninteractive apt-get update && apt-get -y --no-install-recommends \
     install telnet curl openssh-client nano vim-tiny iputils-ping build-essential \
