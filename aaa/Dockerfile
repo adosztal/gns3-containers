@@ -7,10 +7,8 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get update && apt-get -y --no-install-rec
     net-tools freeradius freeradius-utils tacacs+ \
     && rm -rf /var/lib/apt/lists/*
 
-ADD https://raw.githubusercontent.com/adosztal/gns3-containers/master/aaa/radiusd.conf /etc/freeradius/radiusd.conf
-ADD https://raw.githubusercontent.com/adosztal/gns3-containers/master/aaa/clients.conf /etc/freeradius/clients.conf
-ADD https://raw.githubusercontent.com/adosztal/gns3-containers/master/aaa/eap.conf /etc/freeradius/eap.conf
-ADD https://raw.githubusercontent.com/adosztal/gns3-containers/master/aaa/users /etc/freeradius/users
+ADD https://raw.githubusercontent.com/adosztal/gns3-containers/master/aaa/clients.conf /etc/freeradius/3.0/clients.conf
+ADD https://raw.githubusercontent.com/adosztal/gns3-containers/master/aaa/users /etc/freeradius/3.0/mods-config/files/authorize
 ADD https://raw.githubusercontent.com/adosztal/gns3-containers/master/aaa/tac_plus.conf /etc/tacacs+/tac_plus.conf
 ADD https://raw.githubusercontent.com/adosztal/gns3-containers/master/aaa/runonce.sh /sbin/runonce.sh
 ADD https://raw.githubusercontent.com/adosztal/gns3-containers/master/aaa/starter.sh /sbin/starter.sh
