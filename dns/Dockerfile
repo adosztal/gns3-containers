@@ -12,5 +12,5 @@ ADD https://raw.githubusercontent.com/adosztal/gns3-containers/master/dns/dnsmas
 RUN DEBIAN_FRONTEND=noninteractive chmod 644 /etc/dnsmasq.conf
 
 VOLUME [ "/root" ]
-CMD [ "sh", "-c", "cd; exec bash -i" ]
+CMD [ "sh", "-c", "cd; /etc/init.d/dnsmasq start; exec bash -i" ]
 
