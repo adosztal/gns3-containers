@@ -1,8 +1,8 @@
 alice    Cleartext-Password := "gns3"
-         Reply-Message = "Hello, %u"
+         Reply-Message = "Hello, %{User-Name}"
 
 bob      Cleartext-Password := "gns3"
-         Reply-Message = "Hello, %u"
+         Reply-Message = "Hello, %{User-Name}"
 
 #
 # 	Configuration file for the rlm_files module.
