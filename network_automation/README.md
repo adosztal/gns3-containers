@@ -5,5 +5,6 @@ This appliance contains the following network automation tools:
 - NAPALM
 - Pyntc
 - Ansible
+- Terraform
 
 The /root folder is mounted by default.
