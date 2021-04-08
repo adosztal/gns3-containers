@@ -2,6 +2,8 @@
 
 FROM ubuntu:focal
 
+RUN DEBIAN_FRONTEND=noninteractive ln -fs /usr/share/zoneinfo/Etc/UTC /etc/localtime
+
 RUN DEBIAN_FRONTEND=noninteractive apt update \
     && apt install -y --no-install-recommends software-properties-common curl gpg-agent \
     && curl -fsSL https://apt.releases.hashicorp.com/gpg | apt-key add - \
@@ -21,5 +23,5 @@ RUN DEBIAN_FRONTEND=noninteractive apt update \
     && chown -R root /root/.ssh/ \
     && ln -sf /usr/bin/python3.8 /usr/bin/python3
 
-VOLUME [ "/root","/usr", "/scripts" ]
+VOLUME [ "/root", "/etc", "/usr" ]
 CMD [ "sh", "-c", "cd; exec bash -i" ]

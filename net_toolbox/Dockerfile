@@ -1,10 +1,14 @@
 # Networkers' Toolbox
 
-FROM ubuntu:bionic
+FROM ubuntu:focal
+
+RUN DEBIAN_FRONTEND=noninteractive ln -fs /usr/share/zoneinfo/Etc/UTC /etc/localtime
 
 RUN DEBIAN_FRONTEND=noninteractive apt-get update && apt-get -y --no-install-recommends \
     install telnet curl openssh-client nano vim-tiny iputils-ping build-essential \
     net-tools nginx vsftpd isc-dhcp-server tftpd-hpa snmpd snmptrapd rsyslog \
+    && dpkg-reconfigure --frontend noninteractive tzdata \
+    && apt clean \
     && rm -rf /var/lib/apt/lists/*
 
 ADD https://raw.githubusercontent.com/adosztal/gns3-containers/master/net_toolbox/vsftpd.conf /etc/vsftpd.conf
